@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Monthly Report</title>
+    <link rel="stylesheet" href="CSS/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/e_det_rep.css">
+    
+</head>
+<body>
+    <div class="details-container">
+        <!-- Admin Update Form -->
+        <div class="admin-update-form" style="max-width:500px;margin:20px auto 0;background:#f9f9f9;padding:20px;border-radius:8px;box-shadow:0 2px 8px #0001;">
+            <h2 style="margin-bottom:10px;font-size:1.2em;">Update Employee Leave & Working Hours</h2>
+            <form id="updateForm">
+                <div style="margin-bottom:10px;">
+                    <label for="updateEid">Employee ID:</label>
+                    <input type="text" id="updateEid" name="E_id" required style="width:100%;padding:6px;">
+                </div>
+                <div style="margin-bottom:10px;">
+                    <label for="updateLeave">Leave Days (Month):</label>
+                    <input type="number" id="updateLeave" name="E_Leave" min="0" required style="width:100%;padding:6px;">
+                </div>
+                <div style="margin-bottom:10px;">
+                    <label for="updateHours">Working Hours (Month):</label>
+                    <input type="number" id="updateHours" name="Working_hour" min="0" required style="width:100%;padding:6px;">
+                </div>
+                <div style="margin-bottom:10px;">
+                    <label for="updateAttendance">Attendance (Month):</label>
+                    <input type="number" id="updateAttendance" name="Attendance" min="0" required style="width:100%;padding:6px;">
+                </div>
+                <button type="submit" style="background:#667eea;color:#fff;padding:8px 16px;border:none;border-radius:4px;cursor:pointer;">Update</button>
+                <span id="updateMsg" style="margin-left:10px;font-size:0.95em;"></span>
+            </form>
+        </div>
+        <div class="details-wrapper">
+            <div class="details-header">
+                <h1><i class="fas fa-user-check"></i> Employee Monthly Attendance & Leave</h1>
+                <div class="header-buttons">
+                    <button class="btn-back" onclick="window.history.back()">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </button>
+                </div>
+            </div>
+            <div class="table-container">
+                <div class="table-scroll">
+                    <table id="monthlyTable">
+                        <thead>
+                            <tr>
+                                <th>E_ID</th>
+                                <th>First Name</th>
+                                <th>Attendance</th>
+                                <th>Leave Days (Month)</th>
+                                <th>Working Hours (Month)</th>
+                                <th>Generate Report</th>
+                            </tr>
+                        </thead>
+                        <tbody id="monthlyList">
+                            <tr>
+                                <td colspan="6" style="text-align: center; padding: 40px;">
+                                    <i class="fas fa-spinner fa-spin" style="font-size: 2em; color: #667eea;"></i>
+                                    <p>Loading data...</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="JS/e_det_rep.js"></script>
+</body>
+</html>
